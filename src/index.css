@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --color-hatly-navy: #0A192F;
+  --color-hatly-navy-soft: #13294B;
+  --color-hatly-orange: #FF7B00;
+  --color-hatly-orange-hover: #E56E00;
+}
+
+@layer base {
+  html {
+    font-family: "Cairo", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #F6F8FB;
+    color: #0A192F;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Leaflet map RTL & styling fixes */
+.hatly-leaflet-map {
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+  direction: ltr;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  direction: ltr !important;
+  font-family: "Cairo", ui-sans-serif, system-ui, -apple-system, sans-serif !important;
+  z-index: 10;
+  background: #e2e8f0;
+}
+
+.leaflet-container img,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  font-family: "Cairo", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  text-align: right;
+  direction: rtl;
+}
+
+/* Reduced motion compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

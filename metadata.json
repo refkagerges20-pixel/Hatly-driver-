@@ -1,0 +1,6 @@
+{
+  "name": "هاتلي - تطبيق المندوب",
+  "description": "تطبيق مناديب التوصيل لخدمة هاتلي لإدارة الطلبات والتتبع المباشر والعهدة النقدية",
+  "requestFramePermissions": ["geolocation", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
